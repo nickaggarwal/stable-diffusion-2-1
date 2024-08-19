@@ -17,7 +17,7 @@ class InferlessPythonModel:
 
 
     def infer(self, inputs):
-        prompt = inputs["prompt"]
+        prompt = "a horse near a beach"
         print("Hello World Promt 15")
         image = self.pipe(prompt).images[0]
         buff = BytesIO()
