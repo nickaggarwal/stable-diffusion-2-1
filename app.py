@@ -4,6 +4,8 @@ from io import BytesIO
 import base64
 import os
 
+VOLUME_PATH = os.getenv("NFS_PATH")
+
 class InferlessPythonModel:
     def initialize(self):
         print("Hello World 14")
@@ -21,6 +23,8 @@ class InferlessPythonModel:
         image = self.pipe(prompt).images[0]
         buff = BytesIO()
         image.save(buff, format="JPEG")
+        file_path =  VOLUME_PATH + "/myfile.jpg"
+        image.save(file_path)
         img_str = base64.b64encode(buff.getvalue()).decode()
         return { "generated_image_base64" : img_str }
         
