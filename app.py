@@ -12,8 +12,12 @@ class InferlessPythonModel:
     def infer(self, inputs):
         prompt = inputs["prompt"]
         print("Hello World Promt 15")
+        if prompt == "There is a fine house in the forest":
+            theta = [126.85237884521484]
+        else:
+            theta = [126.85237884521484, 126.85237884521484]
         return {
-                "theta": [126.85237884521484],
+                "theta": theta,
                 "phi": [90],
                 "theta_confidence": [126.85237884521484],
                 "phi_confidence": [12],
