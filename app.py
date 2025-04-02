@@ -12,7 +12,13 @@ class InferlessPythonModel:
     def infer(self, inputs):
         prompt = inputs["prompt"]
         print("Hello World Promt 15")
-        return { "generated_image_base64" : [126.85237884521484] }
+        return {
+                "theta": [126.85237884521484],
+                "phi": [90],
+                "theta_confidence": [126.85237884521484],
+                "phi_confidence": [12],
+                "error": "none"
+            }
         
     def finalize(self):
         self.pipe = None
