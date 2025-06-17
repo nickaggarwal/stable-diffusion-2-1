@@ -6,7 +6,6 @@ import os
 
 class InferlessPythonModel:
     def initialize(self):
-        print("Hello World 14")
         self.pipe = StableDiffusionPipeline.from_pretrained(
             "stabilityai/stable-diffusion-2-1",
             use_safetensors=True,
@@ -17,7 +16,6 @@ class InferlessPythonModel:
 
     def infer(self, inputs):
         prompt = inputs["prompt"]
-        print("Hello World Promt 15")
         image = self.pipe(prompt).images[0]
         buff = BytesIO()
         image.save(buff, format="JPEG")
