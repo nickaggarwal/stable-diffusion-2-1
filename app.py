@@ -7,7 +7,7 @@ import os
 class InferlessPythonModel:
     def initialize(self):
         self.pipe = StableDiffusionPipeline.from_pretrained(
-            "stabilityai/stable-diffusion-3.5-medium",
+            "stabilityai/stable-diffusion-2-1",
             use_safetensors=True,
             torch_dtype=torch.float16,
             device_map='balanced'
